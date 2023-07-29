@@ -2,7 +2,7 @@
 @import 'normalize';
 @import 'variables';
 @import 'icon-font';
-// @import 'rtl'; // uncomment to switch to RTL format
+@import 'rtl'; // uncomment to switch to RTL format
 
 /*
 Copyright 2008-2013 Concur Technologies, Inc.
@@ -23,6 +23,11 @@ under the License.
 ////////////////////////////////////////////////////////////////////////////////
 // GENERAL STUFF
 ////////////////////////////////////////////////////////////////////////////////
+@import url("https://fonts.cdnfonts.com/css/iranyekan?family=IranYekan");html {
+  font-family: 'IRANYekan', sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%
+}
 
 html, body {
   color: $main-text;

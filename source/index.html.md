@@ -3,9 +3,9 @@ title: API Reference
 
 language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers
   - shell
-  - ruby
-  - python
-  - javascript
+  # - ruby
+  # - python
+  # - javascript
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -20,22 +20,34 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: Documentation for the Kittn API
+    content: Documentation for the SwapWallet API
 ---
 
-# Introduction
+# پیش‌گفتار
+این صفحه حاوی مستندات مربوط به API [سواپ‌ولت]() است که به شما کمک می‌کند تا بتوانید بیشترین بهره را از حساب کاربری سواپ‌ولت خود ببرید. (نیاز داره که یه خلاصه‌ای از اینکه چه کارهایی می‌تونن باهاش انجام بدن رو داشته باشه)
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+لطفاً پیش از استفاده از APIها، اطمینان حاصل کنید که [قوانین استفاده از سواپ‌ولت]() و هم‌چنین [قوانین استفاده از API سواپ‌ولت]() را مطالعه کرده و پذیرفته‌اید. همچنین با عضویت در [کانال رسمی اطلاع‌رسانی سواپ‌ولت]()، به صورت مستمر تغییرات ایجاد شده در APIها را رصد کنید تا در صورت نیاز، تغییرات لازم را اعمال کنید.
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+پیشنهاد می‌کنیم که در کدهای خود، راه‌هایی برای مواجهه با انواع خطاها، که در ادامه توضیح داده می‌شوند، در نظر بگیرید تا بتوانید عکس‌العمل مناسبی در هنگام برخورد با این خطاها داشته باشید.
+اگر برای اولین بار قصد استفاده از APIها سواپ‌ولت را دارید، پیشنهاد می‌کنیم ابتدا قسمت [راهنمای شروع به کار با API]() را بررسی کنید.
 
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
+# دریافت توکن
 
-# Authentication
+برای استفاده از APIها، نیاز دارید تا ابتدا توکن خود را از طریق [بات تلگرامی سواپ‌ولت]() دریافت کنید. برای این کار، به قسمت **`تنظیمات`** &larr; **`توسعه‌دهندگان`** &larr; **`ایجاد کلید توسعه`** بروید؛ کلید خود را از پیام داخل بات دریافت کنید و در ادامه برای استفاده از APIها، از این توکن استفاده کنید.
 
-> To authorize, use this code:
+همچنین برای منقضی کردن کردن توکن خود، می‌توانید در [بات]() به قسمت **`تنظیمات`** &larr; **`توسعه‌دهندگان`** &larr; **`منقضی کردن توکن`** بروید؛ با این کار توکن قبلی شما منقضی می‌شود و یک توکن جدید جایگزین قبلی در پیام ارسالی می‌شود. 
 
-```ruby
+این توکن باید در Header درخواست‌های شما به صورت ‍‍`Authorization: ‌Bearer YourToken` ارسال شود.
+
+<aside class="notice">
+ لطفاً تحت هیچ شرایطی توکن خود را با دیگران به اشتراک نگذارید؛ در صورت اشتراک، مسئولیت هرگونه سواستفاده از این کلید بر عهده‌ی شما می‌باشد.
+
+همچنین در صورت دسترسی تصادفی سایر افراد به توکن مربوط به شما، فوراً اقدام به منقضی کردن کرده و از یک توکن جدید برای ادامه استفاده کنید.
+</aside>
+
+پیشنهاد می‌کنیم تنها در صورتی که با روش‌های امن ذخیره‌ی گذرواژه در کد آشنایی دارید، اقدام به استفاده از توکن بکنید.
+
+<!-- ```ruby
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
@@ -242,4 +254,4 @@ This endpoint deletes a specific kitten.
 Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to delete
-
+ -->
